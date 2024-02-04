@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/COMP4537/labs/3/getDate",
+      "src": "/LAB3/getDate",
       "dest": "/api/server.js"
     }
   ]
