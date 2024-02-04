@@ -1,22 +1,15 @@
 {
   "version": 2,
-  "name": "lab3-api",
   "builds": [
     {
-      "src": "server.js",
+      "src": "/api/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/COMP4537/labs/3/getDate",
-      "dest": "/server.js"
+      "src": "/COMP4537/labs/3/getDate",
+      "dest": "/api/server.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  }
+  ]
 }
