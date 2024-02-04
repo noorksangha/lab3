@@ -1,14 +1,12 @@
+const utils = require('./modules/util.js');
 const http = require('http');
 const url = require('url');
-const utils = require('./modules/util');
+const message = require("./lang/en/en.js")
 
-module.exports = (request, response) => {
-    const queryObject = url.parse(request.url, true).query;
 
-    const name = queryObject.name || 'Guest';
-    const text = queryObject.text || 'Fake';
-    const currentTime = utils.getDate();
-
-    response.writeHead(200, {'Content-Type': 'text/html'});
-    response.end(`<p style="color: blue;">Hello ${name}, What a beautiful day. Server current date and time is ${currentTime}</p>`);
-};
+http.createServer(function (req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  let name = req.url.split("=")[1];
+  res.write(`<p style="color: blue;">${message.greeting.replace("%1",name)} ${date.getDate().toString()}</p>`);
+  res.end();
+}).listen(8080);
